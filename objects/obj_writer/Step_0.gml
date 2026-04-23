@@ -1,0 +1,1 @@
+if (button_pressed(KEY.CONFIRM)) event_user(0);

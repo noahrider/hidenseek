@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"cl_send_packet_ext",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"cl_send_packet_ext",
+  "parent":{
+    "name":"Client",
+    "path":"folders/Scripts/Client.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"sv_send_broadcast_packet",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"sv_send_broadcast_packet",
+  "parent":{
+    "name":"Server",
+    "path":"folders/Scripts/Server.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
