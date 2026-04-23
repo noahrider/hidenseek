@@ -46,7 +46,7 @@ function cl_get_packet(buffer, socket) {
 			with (obj_atlas) {
 				cl_send_packet(PacketID.Movement, [
 					[buffer_string, global.clname],
-					[buffer_u8, scr_colorid(colorID)],
+					[buffer_u8, scr_colorid(color)],
 					[buffer_string, room_get_name(room)],
 					[buffer_u16, x],
 					[buffer_u16, y],
