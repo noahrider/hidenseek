@@ -16,17 +16,19 @@ function sv_get_packet(buffer, socket) {
 			name = buffer_read(buffer, buffer_string);
 			var requestedColorID = buffer_read(buffer, buffer_u8);
 			
+			if (strlen(name) > 12) {
+				printf("WARNING!! Connector name length ({:1}) > 12. Trimming..", strlen(name));
+				name = string_delete(name, 13, strlen(name) - 12);
+			}
+			
+			global.player[userID].info.name = name;
+			
 			printf("New client \"{:1}\" connection ({:2})", name, userID);
 			
 			//if nobody is the host, make this random ass guy the host xd
 			if (!array_find_index(global.player, function(e){return (e.host == true)})) {
 				global.player[userID].host = true;
-				printf("Setting user {:1} to host", userID);
-			}
-			
-			if (strlen(name) > 12) {
-				printf("WARNING!! Connector name length ({:1}) > 12. Trimming..", strlen(name));
-				name = string_delete(name, 13, strlen(name) - 12);
+				printf("Setting user {:1} ({:2}) to host", name, userID);
 			}
 			
 			if (scr_color_is_taken(global.colors[requestedColorID])) {
@@ -38,6 +40,8 @@ function sv_get_packet(buffer, socket) {
 			global.player[userID].info.color = global.colors[requestedColorID];
 			
 			
+			var _charax = irandom_range(20, 274);
+			var _charay = irandom_range(100, 176);
 			
 			buffer_seek(buff, buffer_seek_start, 0);
 			buffer_write(buff, buffer_u8, PacketID.NewConnection);

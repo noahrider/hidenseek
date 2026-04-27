@@ -73,8 +73,8 @@ function scr_start() {
 		#FFFF20,
 		#00FF20,
 		#0080FF,
-		#FF20FF,
-		#FF80FF,
+		#FF00FF,
+		#FFAAFF,
 	];
 	
 	global.clientID = -1;

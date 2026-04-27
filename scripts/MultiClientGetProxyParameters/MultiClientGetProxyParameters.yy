@@ -6,7 +6,7 @@
   "name":"MultiClientGetProxyParameters",
   "parent":{
     "name":"MultiClient",
-    "path":"folders/MultiClient.yy",
+    "path":"folders/Extentions/MultiClient.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

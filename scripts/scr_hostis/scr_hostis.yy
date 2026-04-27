@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"MultiClientGetID",
+  "%Name":"scr_hostis",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"MultiClientGetID",
+  "name":"scr_hostis",
   "parent":{
-    "name":"MultiClient",
-    "path":"folders/Extentions/MultiClient.yy",
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

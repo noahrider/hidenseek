@@ -54,12 +54,10 @@ function cl_get_packet(buffer, socket) {
 				]);
 			}
 			
-			var _charax = irandom_range(20, 274);
-			var _charay = irandom_range(80, 176);
 			if (!myself && userID != obj_client.userID) {
 				printf("New player in room (ID: {:1})", userID);
 				if (room == room_lobby) {
-					var chara = instance_create_depth(_charax, _charay, 0, obj_clientchara);
+					var chara = instance_create_depth(0, 0, 0, obj_clientchara);
 					chara.clientID = userID;
 					chara.color = global.colors[colorID];
 				}
@@ -152,13 +150,20 @@ function cl_get_packet(buffer, socket) {
 			global.player[userID].host = true;
 			break;
 		case PacketID.Event:
-			//can only be run if the message comes from the server
-			if (userID != -1) return;
 			var eventID = buffer_read(buffer, buffer_u8);
 			switch(eventID) {
 				case EventID.GameStart:
+					var starting = buffer_read(buffer, buffer_bool);
+					if (starting) {
+						
+					} else {
+						//if we're here, that means it was cancelled (someone left, or by the hand of the host, it was stopped)
+					}
 					break;
 				case EventID.NewTagger:
+					break;
+				default:
+					printf("Invalid event packet recieved ({:1})!", eventID);
 					break;
 			}
 			break;

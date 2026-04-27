@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"MultiClientGetID",
+  "%Name":"menu_select_2D",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"MultiClientGetID",
+  "name":"menu_select_2D",
   "parent":{
-    "name":"MultiClient",
-    "path":"folders/Extentions/MultiClient.yy",
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

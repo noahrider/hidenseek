@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"draw_rectangle_solid",
   "parent":{
-    "name":"Scripts",
-    "path":"folders/Scripts.yy",
+    "name":"Draw",
+    "path":"folders/Scripts/Draw.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",
