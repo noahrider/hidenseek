@@ -3,6 +3,7 @@ function scr_draw_my_name(xx, yy, clientID) {
 	var _name = global.player[clientID].info.name;
 	if (global.debug) _name += $" ({clientID})";
 	
+	draw_set_font(fnt_main);
 	draw_set_color(c_white);
 	if (global.player[clientID].host == true) draw_set_color(c_yellow);
 	

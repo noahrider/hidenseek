@@ -14,12 +14,14 @@ if (button_pressed(KEY.CONFIRM)) {
 		room_goto(room_server);
 	}
 	if (selected == 2) {
-		global.clname = get_string("Please enter your name.", "");
-		while (global.clname == "") {
-			global.clname = get_string("Please enter your name.", "");
+		global.clname = get_string("Please enter your name.\n(leave blank for a random name)", "");
+		if (global.clname == "") {
+			for (var i = 0; i < irandom_range(4, 12); i++) {
+				global.clname += chr(irandom_range(33, 126));
+			}
 		}
 		if (strlen(global.clname) > 12) {
-			//global.clname = string_delete(global.clname, 13, strlen(global.clname) - 12);
+			global.clname = string_delete(global.clname, 13, strlen(global.clname) - 12);
 		}
 		instance_create_depth(0, 0, -999, obj_client);
 		//instance_destroy();

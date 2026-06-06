@@ -3,6 +3,7 @@ moving = false;
 cutscene = false;
 intextend = 24;
 moveSpeed = 3;
+forceMovePacket = false;
 
 color = global.player[obj_client.userID].info.color;
 //color = c_fuchsia;

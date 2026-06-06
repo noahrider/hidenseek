@@ -2,6 +2,7 @@
 
 for (var i = 0; i < MAX_PLAYERS; i++) {
 	if (!global.player[i].connected) continue;
+	if (global.player[i].lastKnownPosition.room != room) continue;
 	if (i == userID) continue;
 	
 	var position = global.player[i].lastKnownPosition;

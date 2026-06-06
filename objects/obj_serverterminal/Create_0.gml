@@ -39,6 +39,21 @@ commands = {
 			
 		},
 	},
+	startgame: {
+		desc: "Start the game.",
+		usage: "startgame",
+		callback: function(){
+			with (obj_server) {
+				buffer_seek(buff, buffer_seek_start, 0);
+				buffer_write(buff, buffer_u8, PacketID.Event);
+				buffer_write(buff, buffer_u8, 0);
+				buffer_write(buff, buffer_u8, EventID.GameStart);
+				buffer_write(buff, buffer_bool, true);
+				sv_send_broadcast_packet(buff);
+			}
+			printf("Game started");
+		},
+	},
 };
 
 messages = [];

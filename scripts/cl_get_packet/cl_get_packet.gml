@@ -155,9 +155,10 @@ function cl_get_packet(buffer, socket) {
 				case EventID.GameStart:
 					var starting = buffer_read(buffer, buffer_bool);
 					if (starting) {
-						
+						instance_create_depth(0, 0, -10000, obj_gamestart_countdown);
 					} else {
 						//if we're here, that means it was cancelled (someone left, or by the hand of the host, it was stopped)
+						instance_destroy(obj_gamestart_countdown);
 					}
 					break;
 				case EventID.NewTagger:

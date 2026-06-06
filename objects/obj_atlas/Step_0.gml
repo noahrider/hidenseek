@@ -52,7 +52,8 @@ with (collision_object(obj_triggerable, false, false)) {
 
 scr_depth();
 
-if (moving) {
+if (moving || forceMovePacket) {
+	forceMovePacket = false;
 	cl_send_packet(PacketID.Movement, [
 		[buffer_string, global.clname],
 		[buffer_u8, scr_colorid(color)],
